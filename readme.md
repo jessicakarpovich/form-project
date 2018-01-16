@@ -2,7 +2,7 @@
 
 This is a responsive and accessible form that will validate user input.
 
-To view the results, visit <https://jessicakarpovich.github.io/form-project/>.
+To view the results, visit <https://jessicakarpovich.github.io/form-project/index.html>.
 
 # Project Setup
 

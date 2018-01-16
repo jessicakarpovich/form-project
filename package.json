@@ -1,0 +1,22 @@
+{
+  "name": "form-project",
+  "version": "1.0.0",
+  "description": "This is a responsive and accessible form that will validate user input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicakarpovich/form-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicakarpovich/form-project/issues"
+  },
+  "homepage": "https://github.com/jessicakarpovich/form-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
