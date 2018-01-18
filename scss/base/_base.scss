@@ -1,0 +1,51 @@
+/*** General ***/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-family-default;
+    font-size: $font-size-default;
+    color: $font-color-default;
+}
+
+h1 {
+    font-family: $font-family-headings;
+    color: $font-color-alt;
+    font-size: $font-size-heading;
+    font-weight: 900;
+}
+
+.shipping-details {
+    background-color: #faf9f8;
+}
+
+.order-summary {
+  //  background-color: #eef9f8;
+    background-color: #f4f3f2;
+}
+
+/** Form **/
+form {
+    display: flex;
+    @include mq(small) {
+        flex-direction: column;
+    }
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    // Figure out how to have both on one line
+    // maybe encapsulate in an element //div?
+    .price {
+        align-self: flex-end;
+        //flex-grow: ;
+    }
+    
+    .product-name {
+        //flex-grow: .5;
+    }
+}
