@@ -1,0 +1,28 @@
+// make all text the same size, style later using rem
+// remove padding
+html, body, div, span, article, section, 
+h1, h2, h3, h4, h5, h6, p, 
+a, button, 
+ol, ul, li,
+form, label, input,
+header, nav {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+/* no border on fieldset */
+fieldset {
+    border: none;
+}
+
+input[type=search] {     
+    /* needed to avoid using default browser search box height, appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=radio] {
+  //  appearance: none;
+}
