@@ -43,7 +43,8 @@ h1 {
 form {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  /* div containing product name and price in summary */ }
   @media (min-width: 300px) and (max-width: 700px) {
     form {
       -webkit-box-orient: vertical;
@@ -59,6 +60,23 @@ form {
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 1rem; }
-  form .price {
-    -ms-flex-item-align: end;
-        align-self: flex-end; }
+  form .name-price, form .shipping, form .total, form .address_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  form .address_2 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: calc(90% / 3); }
+    form .address_2 div input#state {
+      -webkit-box-flex: .5;
+          -ms-flex-positive: .5;
+              flex-grow: .5; }

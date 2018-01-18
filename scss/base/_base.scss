@@ -38,14 +38,29 @@ form {
         padding: 1rem;
     }
     
-    // Figure out how to have both on one line
-    // maybe encapsulate in an element //div?
-    .price {
-        align-self: flex-end;
-        //flex-grow: ;
+    /* div containing product name and price in summary */
+    .name-price, .shipping, .total, .address_2 {
+        display: flex;
+        justify-content: space-between;
     }
     
-    .product-name {
-        //flex-grow: .5;
+    .address_2 div {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(90% / 3);
+        
+        // figure out how to make state smaller
+        input#state {
+            flex-grow: .5;    
+        }
+        
+        
     }
 }
+
+
+
+
+
+
+
