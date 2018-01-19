@@ -44,6 +44,7 @@ form {
     }
     
     section {
+        //height: 50rem;
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -78,11 +79,11 @@ form {
 /** radio button styling **/
 /* add border when checked */
 input[type=radio] {
-    width: 10rem;
+    width: 13rem;
     height: 4rem;
     
     &:checked {
-        border: 2px solid #000;
+        border: 3px solid #47c252;
     }
 }
 
@@ -94,18 +95,29 @@ input[type=radio] {
     justify-content: center;
 }
 
-.colors label {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-}
-    
-#size_1, #color_1, #color_2 {
+#size_1 {
     margin-bottom: -3rem;
     background-color: #eee;
 }
 
+/* hide color labels and align radio buttons */
+.colors {
+    display: flex;
+    justify-content: flex-start;
+    
+    label {
+        display: none;
+        visibility: hidden;
+    }
+}
 
+#color_1 {
+    background-color: #1b8118;
+    margin-right: 1rem;
+}
+
+#color_2 {
+    background-color: #104688;
+}
 
 

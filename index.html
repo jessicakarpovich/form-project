@@ -11,11 +11,13 @@
         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     </head>
+    
+    <body>
         <!-- For now hard-code most of the values -->
         <form action="">
             <section class="product">
                 <h1 class="product-name">Light Saber</h1>
-                <img src="images/star-wars-2908139_640.jpg" alt="">
+                <img src="images/star-wars-2908139_640.jpg" alt="Light Saber" class="js-product">
                 <p class="price"><strong>$150.00</strong></p>
                 
                 <!-- Only one size available -->
@@ -34,13 +36,11 @@
                     <legend>Color Options</legend>
                     
                     <div class="colors">
-                        <label for="color_1">
-                        <input type="radio" id="color_1" name="color" value="green" checked
-                               required>Green</label>
+                        <label for="color_1">Green</label>
+                        <input type="radio" id="color_1" name="color" value="green" checked required>
 
-                        <label for="color_2">
-                        <input type="radio" id="color_2" name="color" value="blue" 
-                               required>Blue</label>
+                        <label for="color_2">Blue</label>
+                        <input type="radio" id="color_2" name="color" value="blue" required>
                     </div>
                 </fieldset>
             </section>
@@ -355,7 +355,6 @@
             </section>
         </form>
     
-    <body>
-    
+        <script src="scripts/script.js"></script>
     </body>
 </html>
