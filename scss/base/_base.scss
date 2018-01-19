@@ -16,12 +16,23 @@ h1 {
     font-weight: 900;
 }
 
+img {
+    margin: 1rem 0;
+}
+
+strong {
+    font-size: 2rem;
+}
+
+fieldset {
+    margin-bottom: 5rem;
+}
+
 .shipping-details {
     background-color: #faf9f8;
 }
 
 .order-summary {
-  //  background-color: #eef9f8;
     background-color: #f4f3f2;
 }
 
@@ -36,6 +47,14 @@ form {
         display: flex;
         flex-direction: column;
         padding: 1rem;
+        @include mq(medium) {
+            width: calc(100% / 3);
+            padding: 2rem;
+        }
+    }
+    
+    .price {
+        align-self: flex-end;
     }
     
     /* div containing product name and price in summary */
@@ -48,18 +67,44 @@ form {
         display: flex;
         flex-direction: column;
         max-width: calc(90% / 3);
-        
-        // figure out how to make state smaller
-        input#state {
-            flex-grow: .5;    
-        }
-        
-        
+    }
+    
+    input {
+        width: 100%;
+        height: 2rem;
     }
 }
 
+/** radio button styling **/
+/* add border when checked */
+input[type=radio] {
+    width: 10rem;
+    height: 4rem;
+    
+    &:checked {
+        border: 2px solid #000;
+    }
+}
 
+/* align center of size radio input with label text */
+.size label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.colors label {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+    
+#size_1, #color_1, #color_2 {
+    margin-bottom: -3rem;
+    background-color: #eee;
+}
 
 
 
