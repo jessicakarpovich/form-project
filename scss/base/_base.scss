@@ -124,13 +124,15 @@ input[type=radio] {
 }
 
 /* hide color labels and align radio buttons */
+.radio-btns {
+    display: flex;
+}
+
 .colors {
     display: flex;
-    justify-content: flex-start;
     
     label {
-        display: none;
-        visibility: hidden;
+        text-indent: -999rem;
     }
 }
 
@@ -143,4 +145,7 @@ input[type=radio] {
     background-color: #104688;
 }
 
-
+.country {
+    display: flex;
+    flex-direction: column;
+}
