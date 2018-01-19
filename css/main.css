@@ -36,7 +36,8 @@ h1 {
   font-family: "Roboto", sans-serif;
   color: #163141;
   font-size: 2.5rem;
-  font-weight: 900; }
+  font-weight: 900;
+  margin-bottom: 1rem; }
 
 img {
   margin: 1rem 0; }
@@ -45,13 +46,25 @@ strong {
   font-size: 2rem; }
 
 fieldset {
-  margin-bottom: 5rem; }
+  margin-bottom: 3rem; }
 
 .shipping-details {
   background-color: #faf9f8; }
+  .shipping-details label {
+    margin-top: 1rem; }
 
 .order-summary {
   background-color: #f4f3f2; }
+  .order-summary div {
+    margin-top: 1rem; }
+  .order-summary hr {
+    width: 100%;
+    color: #eee;
+    margin: 1rem 0; }
+  .order-summary p.product-name, .order-summary p.price {
+    font-size: 2rem; }
+  .order-summary .address {
+    height: 7rem; }
 
 /** Form **/
 form {

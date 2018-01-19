@@ -14,6 +14,7 @@ h1 {
     color: $font-color-alt;
     font-size: $font-size-heading;
     font-weight: 900;
+    margin-bottom: 1rem;
 }
 
 img {
@@ -21,19 +22,41 @@ img {
 }
 
 strong {
-    font-size: 2rem;
+    font-size: $font-size-large;
 }
 
 fieldset {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .shipping-details {
     background-color: #faf9f8;
+    
+    label {
+        margin-top: 1rem;
+    }
 }
 
 .order-summary {
     background-color: #f4f3f2;
+    
+    div {
+        margin-top: 1rem;
+    }
+    
+    hr {
+        width: 100%;
+        color: #eee;
+        margin: 1rem 0;
+    }
+    
+    p.product-name, p.price {
+        font-size: $font-size-large;
+    }
+    
+    .address {
+        height: 7rem;
+    }
 }
 
 /** Form **/
