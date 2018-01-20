@@ -7,6 +7,7 @@ body {
     font-family: $font-family-default;
     font-size: $font-size-default;
     color: $font-color-default;
+    font-weight: 500;
 }
 
 h1 {
@@ -29,14 +30,89 @@ fieldset {
     margin-bottom: 3rem;
 }
 
+/* style first form section */
+.product {
+    legend {
+        font-weight: 600;
+    }
+    
+    /** radio button styling **/
+    /* add border when checked */
+    input[type=radio] {
+        width: 13rem;
+        height: 4rem;
+
+        &:checked {
+            border: 3px solid #47c252;
+        }
+    }
+
+    /* align center of size radio input with label text */
+    .size label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #size_1 {
+        margin-bottom: -3rem;
+        background-color: #eee;
+    }
+
+    /* hide color labels and align radio buttons */
+    .radio-btns {
+        display: flex;
+    }
+
+    .colors {
+        display: flex;
+
+        label {
+            text-indent: -999rem;
+        }
+    }
+
+    #color_1 {
+        background-color: #1b8118;
+        margin-right: 1rem;
+    }
+
+    #color_2 {
+        background-color: #104688;
+    }
+}
+
+/* style second form section */
 .shipping-details {
     background-color: #faf9f8;
     
     label {
         margin-top: 1rem;
     }
+    
+    input {
+        margin-bottom: 1rem;
+    }
+    
+    .address_2 div {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(90% / 3);
+    }
+    
+    select {
+        height: 3rem;
+        font-size: $font-size-default;
+    }
+    
+    .country {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
+/* style third form section */
 .order-summary {
     background-color: #f4f3f2;
     
@@ -55,7 +131,14 @@ fieldset {
     }
     
     .address {
-        height: 7rem;
+        height: 10rem;
+        margin: 1rem 0;
+    }
+    
+    button {
+        width: 100%;
+        height: 3.5rem;
+        background-color: #47c252;
     }
 }
 
@@ -67,7 +150,7 @@ form {
     }
     
     section {
-        //height: 50rem;
+        max-height: 50rem;
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -87,65 +170,10 @@ form {
         justify-content: space-between;
     }
     
-    .address_2 div {
-        display: flex;
-        flex-direction: column;
-        max-width: calc(90% / 3);
-    }
-    
     input {
         width: 100%;
         height: 2rem;
     }
 }
 
-/** radio button styling **/
-/* add border when checked */
-input[type=radio] {
-    width: 13rem;
-    height: 4rem;
-    
-    &:checked {
-        border: 3px solid #47c252;
-    }
-}
 
-/* align center of size radio input with label text */
-.size label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#size_1 {
-    margin-bottom: -3rem;
-    background-color: #eee;
-}
-
-/* hide color labels and align radio buttons */
-.radio-btns {
-    display: flex;
-}
-
-.colors {
-    display: flex;
-    
-    label {
-        text-indent: -999rem;
-    }
-}
-
-#color_1 {
-    background-color: #1b8118;
-    margin-right: 1rem;
-}
-
-#color_2 {
-    background-color: #104688;
-}
-
-.country {
-    display: flex;
-    flex-direction: column;
-}

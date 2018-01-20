@@ -16,13 +16,6 @@ fieldset {
     border: none;
 }
 
-input[type=search] {     
-    /* needed to avoid using default browser search box height, appearance */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 input[type=radio] {
     appearance: none;
 }

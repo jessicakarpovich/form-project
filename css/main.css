@@ -12,12 +12,6 @@ header, nav {
 fieldset {
   border: none; }
 
-input[type=search] {
-  /* needed to avoid using default browser search box height, appearance */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
-
 input[type=radio] {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -30,7 +24,8 @@ html {
 body {
   font-family: "Arimo", "sans-serif";
   font-size: 1.4rem;
-  color: #000; }
+  color: #000;
+  font-weight: 500; }
 
 h1 {
   font-family: "Roboto", sans-serif;
@@ -48,11 +43,81 @@ strong {
 fieldset {
   margin-bottom: 3rem; }
 
+/* style first form section */
+.product {
+  /** radio button styling **/
+  /* add border when checked */
+  /* align center of size radio input with label text */
+  /* hide color labels and align radio buttons */ }
+  .product legend {
+    font-weight: 600; }
+  .product input[type=radio] {
+    width: 13rem;
+    height: 4rem; }
+    .product input[type=radio]:checked {
+      border: 3px solid #47c252; }
+  .product .size label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .product #size_1 {
+    margin-bottom: -3rem;
+    background-color: #eee; }
+  .product .radio-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .product .colors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .product .colors label {
+      text-indent: -999rem; }
+  .product #color_1 {
+    background-color: #1b8118;
+    margin-right: 1rem; }
+  .product #color_2 {
+    background-color: #104688; }
+
+/* style second form section */
 .shipping-details {
   background-color: #faf9f8; }
   .shipping-details label {
     margin-top: 1rem; }
+  .shipping-details input {
+    margin-bottom: 1rem; }
+  .shipping-details .address_2 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: calc(90% / 3); }
+  .shipping-details select {
+    height: 3rem;
+    font-size: 1.4rem; }
+  .shipping-details .country {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
 
+/* style third form section */
 .order-summary {
   background-color: #f4f3f2; }
   .order-summary div {
@@ -64,7 +129,12 @@ fieldset {
   .order-summary p.product-name, .order-summary p.price {
     font-size: 2rem; }
   .order-summary .address {
-    height: 7rem; }
+    height: 10rem;
+    margin: 1rem 0; }
+  .order-summary button {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #47c252; }
 
 /** Form **/
 form {
@@ -79,6 +149,7 @@ form {
           -ms-flex-direction: column;
               flex-direction: column; } }
   form section {
+    max-height: 50rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -101,72 +172,6 @@ form {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  form .address_2 div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    max-width: calc(90% / 3); }
   form input {
     width: 100%;
     height: 2rem; }
-
-/** radio button styling **/
-/* add border when checked */
-input[type=radio] {
-  width: 13rem;
-  height: 4rem; }
-  input[type=radio]:checked {
-    border: 3px solid #47c252; }
-
-/* align center of size radio input with label text */
-.size label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-#size_1 {
-  margin-bottom: -3rem;
-  background-color: #eee; }
-
-/* hide color labels and align radio buttons */
-.radio-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.colors {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .colors label {
-    text-indent: -999rem; }
-
-#color_1 {
-  background-color: #1b8118;
-  margin-right: 1rem; }
-
-#color_2 {
-  background-color: #104688; }
-
-.country {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
