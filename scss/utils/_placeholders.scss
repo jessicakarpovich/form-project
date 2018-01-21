@@ -1,0 +1,14 @@
+%flex-left {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+
+    p {
+        margin-right: .5rem; 
+    }
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}

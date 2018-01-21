@@ -20,14 +20,6 @@ h1 {
     @include mq(small) {
         font-size: $font-size-large;
     }
-    
-    @include mq(medium) {
-        font-size: $font-size-large;
-    }
-}
-
-img {
-    margin: 1rem 0;
 }
 
 strong {
@@ -61,6 +53,10 @@ p.product-name, p.price {
 
 /* style first form section */
 .product {
+    img {
+        margin: 1rem 0;
+    }
+
     legend {
         font-weight: 600;
     }
@@ -68,8 +64,7 @@ p.product-name, p.price {
     /** radio button styling **/
     /* add border when checked */
     input[type=radio] {
-        width: 10rem;
-        height: 4rem;
+        @include wh(10rem, 4rem);
 
         @include mq(medium) {
             width: 8rem;
@@ -82,8 +77,7 @@ p.product-name, p.price {
 
     /* align center of size radio input with label text */
     .size label {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
         align-items: center;
         justify-content: center;
     }
@@ -129,8 +123,7 @@ p.product-name, p.price {
     }
     
     .address_1 div {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
         max-width: calc(100% / 2);
         
         &:first-child {
@@ -147,8 +140,7 @@ p.product-name, p.price {
     }
     
     .address_2 div {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
         max-width: calc(90% / 3);
         
     }
@@ -159,8 +151,7 @@ p.product-name, p.price {
     }
     
     .country {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
     }
 }
 
@@ -178,9 +169,11 @@ p.product-name, p.price {
     }
     
     button {
-        width: 100%;
-        height: 3.5rem;
+        @include wh(100%, 3.5rem);
         background-color: #47c252;
+    }
+    div.address-row {
+        @extend %flex-left;
     }
 }
 
@@ -192,8 +185,7 @@ form {
     }
     
     section {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
         padding: 2rem;
         
         @include mq(large) {
@@ -210,8 +202,7 @@ form {
     }
     
     input {
-        width: 100%;
-        height: 2rem;
+        @include wh(100%, 2rem);
     }
     
     /* for error text */
@@ -226,8 +217,7 @@ form {
 }
 
 article {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     justify-content: center;
     max-width: 45rem;
     margin: 1rem auto 0;
@@ -261,23 +251,8 @@ article {
     img {
         margin-top: 3rem;
     }
-}
-
-/* Styling for user entered shipping info */
-div.address-row {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 0;
-
-    p {
-        margin-right: .5rem; 
+    
+    div.address-row {
+        @extend %flex-left;
     }
 }
-
-///////
-//////
-//////
-//////
-////// Refactor CSS
-////// on successful submit edit styling
-////// add checkmark svg

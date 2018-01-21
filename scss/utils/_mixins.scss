@@ -6,3 +6,8 @@
         @media (min-width: 700px) { @content; }
     }
 }
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}

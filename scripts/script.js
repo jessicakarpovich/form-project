@@ -24,8 +24,8 @@ function changeColor(color) {
     }
 }
 
-color1.addEventListener('click', function() { changeColor(color1) }, false);
-color2.addEventListener('click', () => { changeColor(color2) }, false);
+color1.addEventListener('click', () => { changeColor(color1); }, false);
+color2.addEventListener('click', () => { changeColor(color2); }, false);
 
 
 /***** Form Validation *****/
@@ -67,7 +67,7 @@ class CheckValidity {
         } 
         
         // Check for blanks
-        if (this.input.value == "") {
+        if (this.input.value === "") {
             this.addError('Please do not leave this blank');
         } 
         
@@ -96,9 +96,9 @@ function submitEvent(event) {
     
     // if there is at least one error, clear all
     if (errors[0]) {
-        errors.forEach( function(a) {
-            a.remove();
-        })
+        errors.forEach( function(err) {
+            err.remove();
+        });
     }
     
     // Create an instance of the CheckValidity class for each input except Country
@@ -124,7 +124,7 @@ function submitEvent(event) {
             
             errorMessages.forEach( (err) => {
                 fieldArray[i].insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
-            })
+            });
         }
         
         else {
@@ -202,8 +202,8 @@ function showCompletion() {
     shippingSection.classList.add("hidden");
     summarySection.classList.add("hidden");
     
-    
-    let content = "<article class='complete'>";
+    // use user input to show results
+    let content = "<article class='complete' role='article'>";
     
     content += "<h1>Order Completed</h1>";
     content += "<h2>Order Summary</h2>";
