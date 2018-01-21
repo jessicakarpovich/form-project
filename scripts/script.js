@@ -58,10 +58,12 @@ class CheckValidity {
         }
         
         // For text inputs with capital letters, not email
+        // Consider removing
+        /*
         if (this.type == 'text' && this.input.id !="zip-code" && !this.input.value.match(/[A-Z]/g)) {
             this.addError('Must have at least one uppercase letter');
         }
-        
+        */
         if ((this.input.id === "address_1" || this.input.id === "city") &&
             !this.input.value.match(/[a-z]/g)) {
             this.addError('Must have at least one lowercase letter');
@@ -156,37 +158,28 @@ submit.addEventListener('click', submitEvent, false);
 
 /***** Shipping Summary Event *****/
 
-/* Order Summary Shipping Address Fields */
-const name = document.querySelector("#js-name");
-const address1 = document.querySelector("#js-address");
-const address2 = document.querySelector("#js-address2");
-const city = document.querySelector("#js-city");
-const state = document.querySelector("#js-state");
-const zip = document.querySelector('#js-zip');
-const country = document.querySelector('#js-country');
-
-
 // Event Listeners for input fields
-nameField.addEventListener('keyup', function(e) {typeAddress(e, name);}, false);
-addressField.addEventListener('keyup', function(e) {typeAddress(e, address1);}, false);
-address2Field.addEventListener('keyup', function(e) {typeAddress(e, address2);}, false);
-cityField.addEventListener('keyup', function(e) {typeAddress(e, city);}, false);
-stateField.addEventListener('keyup', function(e) {typeAddress(e, state);}, false);
-zipCodeField.addEventListener('keyup', function(e) {typeAddress(e, zip);}, false);
+nameField.addEventListener('keyup', typeAddress, false);
+addressField.addEventListener('keyup', typeAddress, false);
+address2Field.addEventListener('keyup', typeAddress, false);
+cityField.addEventListener('keyup', typeAddress, false);
+stateField.addEventListener('keyup', typeAddress, false);
+zipCodeField.addEventListener('keyup', typeAddress, false);
 
 // Only show country if user changes the selected option
 countryField.addEventListener('change', function() { country.textContent = countryField.value; });
 
 
 // Function to update address field as user types
-function typeAddress(event, field) {
+function typeAddress(event) {
     const key = event.key;
+    // <p> ids in Order Summary shipping address are the same as in Shipping Details <input>
+    //  but prefixed with "js-"
+    const id = "#js-" + event.target.id;
+    const field = document.querySelector(id);
 
-    if (key.length === 1) {
-        field.textContent += key;
-    } else if (event.keyCode == 8) {
-        field.textContent = field.textContent.slice(0, -1);
-    }
+    // Update summary text
+    field.textContent = event.target.value;
 }
 
 
