@@ -28,6 +28,8 @@ const stateField = document.querySelector('#state');
 const zipCodeField = document.querySelector('#zip-code');
 const fieldArray = [nameField, emailField, addressField, cityField, stateField, zipCodeField];
 
+
+// Class to check input validity
 class CheckValidity {
     constructor(input, type) {
         this.input = input;
@@ -54,9 +56,19 @@ class CheckValidity {
             this.addError('Entry is too short');
         }
         
-        if (!this.input.value.match(/[A-Z]/g)) {
+        // For text inputs with capital letters, not email
+        if (this.type == 'text' && this.input.id !="zip-code" && !this.input.value.match(/[A-Z]/g)) {
             this.addError('Must have at least one uppercase letter');
         }
+        
+        if (this.input.id == "zip-code" && !this.input.value.match(/(^\d{5}(?:[-\s]\d{4})?$)/)) {
+            this.addError('Must be a 5 or 9 digit zipcode');
+        } 
+        
+        // Check for blanks
+        if (this.input.value == "") {
+            this.addError('Please do not leave this blank');
+        } 
         
         return this.errors;        
     }
@@ -65,9 +77,16 @@ class CheckValidity {
 // On submit event validate all input before continuing
 submit.addEventListener('click', (event) => {
     event.preventDefault();
-    let errors = document.querySelector('.error');
+    let errors = document.querySelectorAll('.error');
     
+    // if there is at least one error, clear all
+    if (errors[0]) {
+        errors.forEach( function(a) {
+            a.remove();
+        })
+    }
     
+    // Create an instance of the CheckValidity class for each input except Country
     let validateName = new CheckValidity(nameField, 'text');
     let validateEmail = new CheckValidity(emailField, 'email');
     let validateAddress = new CheckValidity(addressField, 'text');
@@ -77,31 +96,31 @@ submit.addEventListener('click', (event) => {
     
     const validateArray = [validateName, validateEmail, validateAddress, validateCity, validateState,
                            validateZipCode];
+    let counter = 0;
     
-    
+    // loop through all inputs and check for errors
     for (let i = 0; i < validateArray.length; i++) {  
         // Store this classes error messages
         let errorMessages = validateArray[i].getMessages();
+
         
         // If there are errors,
-        if (errorMessages.length > 0) {
-            // Clear previous messages
-            if (errors) {
-                errors.remove();
-            }
+        if (errorMessages.length > 0) {   
             
-            // Show current errors
             errorMessages.forEach( (err) => {
                 fieldArray[i].insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
             })
         }
-        else if (errorMessages.length == 0) {
-            if (errors) {
-                errors.remove();
+        
+        else {
+            // If the input field passes validation, add to counter
+            counter++;
+            // If all fields pass validation, show completed order
+            if (counter === validateArray.length) {
+                alert('It worked!');
             }
         }
     }
-    alert('It worked!');
 })
 
 

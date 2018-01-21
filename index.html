@@ -62,16 +62,16 @@
                 <div class="address_2">
                     <div>
                         <label for="city">City</label>
-                        <input type="text" id="city" maxlength="50" required pattern="[a-zA-Z]+">
+                        <input type="text" id="city" minlength="2" maxlength="50" required pattern="[a-zA-Z]+">
                     </div>                 
                     <div>
                         <label for="state">State</label>
-                        <input type="text" id="state" maxlength="13" required pattern="[a-zA-Z]+">
+                        <input type="text" id="state" minlength="2" maxlength="13" required pattern="[a-zA-Z]+">
                     </div>
                     <div>
                         <!-- Different countries use different zip codes, US only uses digits -->
                         <label for="zip-code">Zip Code</label>
-                        <input type="text" id="zip-code" required pattern="[0-9]+">
+                        <input type="text" id="zip-code" minlength="5" maxlength="10" required  inputmode="numeric">
                     </div>
                 </div>
                 
