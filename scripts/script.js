@@ -19,15 +19,6 @@ color2.addEventListener('click', () => { changeColor(color2) }, false);
 
 
 /** Form Validation **/
-const submit = document.querySelector('button');
-const nameField = document.querySelector('#name');
-const emailField = document.querySelector('#email');
-const addressField = document.querySelector('#address_1');
-const cityField = document.querySelector('#city');
-const stateField = document.querySelector('#state');
-const zipCodeField = document.querySelector('#zip-code');
-const fieldArray = [nameField, emailField, addressField, cityField, stateField, zipCodeField];
-
 
 // Class to check input validity
 class CheckValidity {
@@ -74,8 +65,23 @@ class CheckValidity {
     }
 }
 
+// input fields
+const submit = document.querySelector('button');
+const nameField = document.querySelector('#name');
+const emailField = document.querySelector('#email');
+const addressField = document.querySelector('#address_1');
+const cityField = document.querySelector('#city');
+const stateField = document.querySelector('#state');
+const zipCodeField = document.querySelector('#zip-code');
+const fieldArray = [nameField, emailField, addressField, cityField, stateField, zipCodeField];
+
+
 // On submit event validate all input before continuing
-submit.addEventListener('click', (event) => {
+submit.addEventListener('click', submitEvent, false);
+
+
+// Validate input on submit function
+function submitEvent(event) {
     event.preventDefault();
     let errors = document.querySelectorAll('.error');
     
@@ -121,10 +127,26 @@ submit.addEventListener('click', (event) => {
             }
         }
     }
-})
+}
 
 
 
+nameField.addEventListener('keypress', typeAddress, false);
+
+
+// Order Summary Shipping Address Fields
+const name = document.querySelector("#js-name");
+
+
+function typeAddress(event) {
+    const key = event.key;
+    console.log(key);
+    if (key.length === 1) {
+        name.textContent += key;
+    } else if (event.keyCode == 8) {
+        name.textContent = name.textContent.slice(0, -1);
+    }
+}
 
 
 
