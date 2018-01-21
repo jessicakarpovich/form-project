@@ -78,11 +78,13 @@ const submit = document.querySelector('button');
 const nameField = document.querySelector('#name');
 const emailField = document.querySelector('#email');
 const addressField = document.querySelector('#address_1');
+const address2Field = document.querySelector('#address_2');
 const cityField = document.querySelector('#city');
 const stateField = document.querySelector('#state');
 const zipCodeField = document.querySelector('#zip-code');
 const countryField = document.querySelector('#country');
-const fieldArray = [nameField, emailField, addressField, cityField, stateField, zipCodeField];
+const fieldArray = [nameField, emailField, addressField, address2Field, cityField, stateField,
+                    zipCodeField];
 
 
 // On submit event validate all input before continuing
@@ -105,12 +107,13 @@ function submitEvent(event) {
     let validateName = new CheckValidity(nameField, 'text');
     let validateEmail = new CheckValidity(emailField, 'email');
     let validateAddress = new CheckValidity(addressField, 'text');
+    let validateAddress2 = new CheckValidity(address2Field, 'text');
     let validateCity = new CheckValidity(cityField, 'text');
     let validateState = new CheckValidity(stateField, 'text');
     let validateZipCode = new CheckValidity(zipCodeField, 'text');
     
-    const validateArray = [validateName, validateEmail, validateAddress, validateCity, validateState,
-                           validateZipCode];
+    const validateArray = [validateName, validateEmail, validateAddress, validateAddress2,
+                           validateCity, validateState, validateZipCode];
     let counter = 0;
     
     // loop through all inputs and check for errors
@@ -141,6 +144,7 @@ function submitEvent(event) {
 // Order Summary Shipping Address Fields
 const name = document.querySelector("#js-name");
 const address1 = document.querySelector("#js-address");
+const address2 = document.querySelector("#js-address2");
 const city = document.querySelector("#js-city");
 const state = document.querySelector("#js-state");
 const zip = document.querySelector('#js-zip');
@@ -150,6 +154,7 @@ const country = document.querySelector('#js-country');
 // Event Listeners for input fields
 nameField.addEventListener('keyup', function(e) {typeAddress(e, name);}, false);
 addressField.addEventListener('keyup', function(e) {typeAddress(e, address1);}, false);
+address2Field.addEventListener('keyup', function(e) {typeAddress(e, address2);}, false);
 cityField.addEventListener('keyup', function(e) {typeAddress(e, city);}, false);
 stateField.addEventListener('keyup', function(e) {typeAddress(e, state);}, false);
 zipCodeField.addEventListener('keyup', function(e) {typeAddress(e, zip);}, false);

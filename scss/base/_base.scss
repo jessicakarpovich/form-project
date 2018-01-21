@@ -16,6 +16,14 @@ h1 {
     font-size: $font-size-heading;
     font-weight: 900;
     margin-bottom: 1rem;
+    
+    @include mq(small) {
+        font-size: $font-size-large;
+    }
+    
+    @include mq(medium) {
+        font-size: $font-size-large;
+    }
 }
 
 img {
@@ -39,9 +47,13 @@ fieldset {
     /** radio button styling **/
     /* add border when checked */
     input[type=radio] {
-        width: 13rem;
+        width: 10rem;
         height: 4rem;
 
+        @include mq(medium) {
+            width: 8rem;
+        }
+        
         &:checked {
             border: 3px solid #47c252;
         }
@@ -95,10 +107,29 @@ fieldset {
         margin-bottom: 1rem;
     }
     
+    .address_1 div {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(100% / 2);
+        
+        &:first-child {
+            margin-right: 2rem;
+        }
+        
+        input {
+            max-width: 18rem;
+            
+            @include mq(small) {
+                min-width: 14rem;
+            }
+        }
+    }
+    
     .address_2 div {
         display: flex;
         flex-direction: column;
         max-width: calc(90% / 3);
+        
     }
     
     select {
@@ -128,11 +159,27 @@ fieldset {
     
     p.product-name, p.price {
         font-size: $font-size-large;
+        
+        @include mq(small) {
+            font-size: $font-size-default;
+            font-weight: 700;
+        }
     }
     
     .address {
         height: 10rem;
         margin: 1rem 0;
+    }
+    
+    /* Styling for user entered shipping info */
+    div.address-row {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 0;
+
+        p {
+            margin-right: .5rem; 
+        }
     }
     
     button {
@@ -150,13 +197,12 @@ form {
     }
     
     section {
-        max-height: 50rem;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
-        @include mq(medium) {
-            width: calc(100% / 3);
-            padding: 2rem;
+        padding: 2rem;
+        
+        @include mq(large) {
+            width: calc(90% / 3);
         }
     }
     
@@ -170,24 +216,26 @@ form {
         justify-content: space-between;
     }
     
+    .address_1 {
+        display: flex;
+    }
+    
     input {
         width: 100%;
         height: 2rem;
     }
-}
-
-/* for error text */
-.error {
-    color: red;
-}
-
-/* Styling for user entered shipping info */
-div.address-row {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 0;
     
-    p {
-        margin-right: .5rem; 
+    /* for error text */
+    .error {
+        color: red;
     }
 }
+
+
+///////
+//////
+//////
+//////
+////// Refactor CSS
+////// on successful submit, add event to hide these three sections and custom enter the order completion
+////// Update Readme as needed

@@ -15,7 +15,7 @@
     <body>
         <!-- For now hard-code most of the values -->
         <form action="">
-            <section class="product">
+            <section class="product" role="main">
                 <h1 class="product-name">Light Saber Standard Green</h1>
                 <img src="images/star-wars-2908139_640.jpg" alt="Light Saber" class="js-product">
                 <p class="price"><strong>$150.00</strong></p>
@@ -47,7 +47,7 @@
                 </fieldset>
             </section>
             
-            <section class="shipping-details">
+            <section class="shipping-details" role="article">
                 <h1>Shipping Details</h1>
                 
                 <label for="name">Full Name</label>
@@ -56,8 +56,17 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" required>
                 
-                <label for="address_1">Address</label>
-                <input type="text" id="address_1" required pattern="[a-zA-Z0-9]+">
+                <div class="address_1">
+                    <div>
+                        <label for="address_1">Address</label>
+                        <input type="text" id="address_1" required pattern="[a-zA-Z0-9]+">
+                    </div>
+                    
+                    <div>
+                        <label for="address_2">Address 2</label>
+                        <input type="text" id="address_2" pattern="[a-zA-Z0-9]+">
+                    </div>
+                </div>
                 
                 <div class="address_2">
                     <div>
@@ -332,7 +341,7 @@
                 </div>
             </section>
             
-            <section class="order-summary">
+            <section class="order-summary" role="complementary">
                 <h1>Order Summary</h1>
                 <div class="name-price">
                     <p class="product-name">Light Saber Standard Green</p>
@@ -354,7 +363,10 @@
                 <h2>Shipping Address</h2>
                 <address class="address">
                     <p id="js-name"></p>
-                    <p id="js-address"></p>
+                    <div class="address-row">
+                        <p id="js-address"></p>
+                        <p id="js-address2"></p>
+                    </div>
                     
                     <div class="address-row">
                         <p id="js-city"></p>

@@ -34,6 +34,9 @@ h1 {
   font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 1rem; }
+  @media (min-width: 320px) and (max-width: 699px) {
+    h1 {
+      font-size: 2rem; } }
 
 img {
   margin: 1rem 0; }
@@ -53,7 +56,7 @@ fieldset {
   .product legend {
     font-weight: 600; }
   .product input[type=radio] {
-    width: 13rem;
+    width: 10rem;
     height: 4rem; }
     .product input[type=radio]:checked {
       border: 3px solid #47c252; }
@@ -97,6 +100,22 @@ fieldset {
     margin-top: 1rem; }
   .shipping-details input {
     margin-bottom: 1rem; }
+  .shipping-details .address_1 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: calc(100% / 2); }
+    .shipping-details .address_1 div:first-child {
+      margin-right: 2rem; }
+    .shipping-details .address_1 div input {
+      max-width: 18rem; }
+      @media (min-width: 320px) and (max-width: 699px) {
+        .shipping-details .address_1 div input {
+          min-width: 14rem; } }
   .shipping-details .address_2 div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -120,7 +139,8 @@ fieldset {
 
 /* style third form section */
 .order-summary {
-  background-color: #f4f3f2; }
+  background-color: #f4f3f2;
+  /* Styling for user entered shipping info */ }
   .order-summary div {
     margin-top: 1rem; }
   .order-summary hr {
@@ -129,9 +149,23 @@ fieldset {
     margin: 1rem 0; }
   .order-summary p.product-name, .order-summary p.price {
     font-size: 2rem; }
+    @media (min-width: 320px) and (max-width: 699px) {
+      .order-summary p.product-name, .order-summary p.price {
+        font-size: 1.4rem;
+        font-weight: 700; } }
   .order-summary .address {
     height: 10rem;
     margin: 1rem 0; }
+  .order-summary div.address-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 0; }
+    .order-summary div.address-row p {
+      margin-right: .5rem; }
   .order-summary button {
     width: 100%;
     height: 3.5rem;
@@ -142,15 +176,15 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* div containing product name and price in summary */ }
-  @media (min-width: 300px) and (max-width: 700px) {
+  /* div containing product name and price in summary */
+  /* for error text */ }
+  @media (min-width: 320px) and (max-width: 699px) {
     form {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; } }
   form section {
-    max-height: 50rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -158,11 +192,10 @@ form {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 1rem; }
-    @media (min-width: 701px) {
+    padding: 2rem; }
+    @media (min-width: 700px) {
       form section {
-        width: calc(100% / 3);
-        padding: 2rem; } }
+        width: calc(90% / 3); } }
   form .price {
     -ms-flex-item-align: end;
         align-self: flex-end; }
@@ -173,22 +206,12 @@ form {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+  form .address_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   form input {
     width: 100%;
     height: 2rem; }
-
-/* for error text */
-.error {
-  color: red; }
-
-/* Styling for user entered shipping info */
-div.address-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-top: 0; }
-  div.address-row p {
-    margin-right: .5rem; }
+  form .error {
+    color: red; }
