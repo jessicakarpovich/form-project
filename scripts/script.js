@@ -1,16 +1,24 @@
+// for the size
+const size1 = document.querySelector("#size_1").value;
+
 /** The following is for the radio buttons for the color of the product **/
 const color1 = document.querySelector("#color_1");
 const color2 = document.querySelector("#color_2");
 const image = document.querySelector(".js-product");
+const productName = document.querySelectorAll(".product-name");
 
 
 // Change image of product based on user selected color
 function changeColor(color) {
     if (color == color1 && image.getAttribute('src') == "images/star-wars-2369316_640.jpg") {
         image.src = "images/star-wars-2908139_640.jpg";
+        productName[0].innerHTML = "Light Saber " + size1 + " " + color1.value;
+        productName[1].innerHTML = "Light Saber " + size1 + " " + color1.value;
     }
     else if (color == color2 && image.getAttribute('src') == "images/star-wars-2908139_640.jpg") {
-        image.src = "images/star-wars-2369316_640.jpg"
+        image.src = "images/star-wars-2369316_640.jpg";
+        productName[0].innerHTML = "Light Saber " + size1 + " " + color2.value;
+        productName[1].innerHTML = "Light Saber " + size1 + " " + color2.value;
     }
 }
 
