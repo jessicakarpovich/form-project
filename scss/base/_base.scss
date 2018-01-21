@@ -231,11 +231,14 @@ form {
     }
 }
 
+.hidden {
+    display: none;
+}
+
 
 ///////
 //////
 //////
 //////
 ////// Refactor CSS
-////// on successful submit, add event to hide these three sections and custom enter the order completion
-////// Update Readme as needed
+////// on successful submit, custom enter the order completion

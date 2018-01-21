@@ -215,3 +215,6 @@ form {
     height: 2rem; }
   form .error {
     color: red; }
+
+.hidden {
+  display: none; }

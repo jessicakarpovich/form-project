@@ -1,5 +1,12 @@
-// for the size
+// for the sections to later hide them on successful validation
+const productSection = document.querySelector(".product");
+const shippingSection = document.querySelector(".shipping-details");
+const summarySection = document.querySelector(".order-summary");
+
+
+// for the product size
 const size1 = document.querySelector("#size_1").value;
+
 
 /** The following is for the radio buttons for the color of the product **/
 const color1 = document.querySelector("#color_1");
@@ -73,7 +80,7 @@ class CheckValidity {
     }
 }
 
-// input fields
+/* input fields */
 const submit = document.querySelector('button');
 const nameField = document.querySelector('#name');
 const emailField = document.querySelector('#email');
@@ -135,12 +142,14 @@ function submitEvent(event) {
             // If all fields pass validation, show completed order
             if (counter === validateArray.length) {
                 alert('It worked!');
+                // show completed screen
+                showCompletion();
             }
         }
     }
 }
 
-// Order Summary Shipping Address Fields
+/* Order Summary Shipping Address Fields */
 const name = document.querySelector("#js-name");
 const address1 = document.querySelector("#js-address");
 const address2 = document.querySelector("#js-address2");
@@ -174,6 +183,13 @@ function typeAddress(event, field) {
 }
 
 
+/* On successful validation, show completed screen */
+// first hide the existing sections
+function showCompletion() {
+    productSection.classList.add("hidden");
+    shippingSection.classList.add("hidden");
+    summarySection.classList.add("hidden");
+}
 
 
 
