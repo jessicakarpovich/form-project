@@ -176,8 +176,18 @@ form {
     }
 }
 
+/* for error text */
 .error {
     color: red;
 }
 
-
+/* Styling for user entered shipping info */
+div.address-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+    
+    p {
+        margin-right: .5rem; 
+    }
+}

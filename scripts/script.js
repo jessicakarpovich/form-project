@@ -73,6 +73,7 @@ const addressField = document.querySelector('#address_1');
 const cityField = document.querySelector('#city');
 const stateField = document.querySelector('#state');
 const zipCodeField = document.querySelector('#zip-code');
+const countryField = document.querySelector('#country');
 const fieldArray = [nameField, emailField, addressField, cityField, stateField, zipCodeField];
 
 
@@ -129,22 +130,34 @@ function submitEvent(event) {
     }
 }
 
-
-
-nameField.addEventListener('keypress', typeAddress, false);
-
-
 // Order Summary Shipping Address Fields
 const name = document.querySelector("#js-name");
+const address1 = document.querySelector("#js-address");
+const city = document.querySelector("#js-city");
+const state = document.querySelector("#js-state");
+const zip = document.querySelector('#js-zip');
+const country = document.querySelector('#js-country');
 
 
-function typeAddress(event) {
+// Event Listeners for input fields
+nameField.addEventListener('keyup', function(e) {typeAddress(e, name);}, false);
+addressField.addEventListener('keyup', function(e) {typeAddress(e, address1);}, false);
+cityField.addEventListener('keyup', function(e) {typeAddress(e, city);}, false);
+stateField.addEventListener('keyup', function(e) {typeAddress(e, state);}, false);
+zipCodeField.addEventListener('keyup', function(e) {typeAddress(e, zip);}, false);
+
+// Only show country if user changes the selected option
+countryField.addEventListener('change', function() { country.textContent = countryField.value; });
+
+
+// Function to update address field as user types
+function typeAddress(event, field) {
     const key = event.key;
-    console.log(key);
+
     if (key.length === 1) {
-        name.textContent += key;
+        field.textContent += key;
     } else if (event.keyCode == 8) {
-        name.textContent = name.textContent.slice(0, -1);
+        field.textContent = field.textContent.slice(0, -1);
     }
 }
 
