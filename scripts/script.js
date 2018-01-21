@@ -62,6 +62,15 @@ class CheckValidity {
             this.addError('Must have at least one uppercase letter');
         }
         
+        if ((this.input.id === "address_1" || this.input.id === "city") &&
+            !this.input.value.match(/[a-z]/g)) {
+            this.addError('Must have at least one lowercase letter');
+        }
+        
+        if (this.input.id === "address_1" && !this.input.value.match(/[0-9]/g)) {
+            this.addError('Must have at least one number');    
+        }
+        
         if (this.input.id == "zip-code" && !this.input.value.match(/(^\d{5}(?:[-\s]\d{4})?$)/)) {
             this.addError('Must be a 5 or 9 digit zipcode');
         } 

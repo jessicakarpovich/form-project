@@ -59,23 +59,23 @@
                 <div class="address_1">
                     <div>
                         <label for="address_1">Address</label>
-                        <input type="text" id="address_1" required pattern="[a-zA-Z0-9]+">
+                        <input type="text" id="address_1" required pattern="[a-zA-Z0-9\s]+">
                     </div>
                     
                     <div>
                         <label for="address_2">Address 2</label>
-                        <input type="text" id="address_2" pattern="[a-zA-Z0-9]+">
+                        <input type="text" id="address_2" pattern="[a-zA-Z0-9\s]+">
                     </div>
                 </div>
                 
                 <div class="address_2">
                     <div>
                         <label for="city">City</label>
-                        <input type="text" id="city" minlength="2" maxlength="50" required pattern="[a-zA-Z]+">
+                        <input type="text" id="city" minlength="2" maxlength="50" required pattern="[A-Z\sa-z]+">
                     </div>                 
                     <div>
                         <label for="state">State</label>
-                        <input type="text" id="state" minlength="2" maxlength="13" required pattern="[a-zA-Z]+">
+                        <input type="text" id="state" minlength="2" maxlength="13" required pattern="[A-Za-z]+">
                     </div>
                     <div>
                         <!-- Different countries use different zip codes, US only uses digits -->
