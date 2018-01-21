@@ -1,6 +1,6 @@
 # Introduction
 
-This is a responsive and accessible form that will validate user input.
+This is a responsive and accessible form that will validate user input. Upon succeddful validation, the completed order will be displayed.
 
 To view the results, visit <https://jessicakarpovich.github.io/form-project/>.
 
@@ -27,3 +27,10 @@ Before you get started, check to make sure you have Sass, nvm, node, gulp, and g
 - Browsersync allows you to see your changes applied live in your browser. To install it go [here](https://browsersync.io/#install).
 
 2. To use Autoprefixer, to add vendor prefixes to CSS, install [gulp-postcss](https://github.com/postcss/gulp-postcss) and [Autoprefixer](https://github.com/postcss/autoprefixer) by using `npm install gulp-postcss autoprefixer` in your project directory.
+
+# Current Functionality #
+Currently, the form uses a one-column or three-column layout depending on the screen size. 
+
+It can be completed by tabbing through the various input controls and entering required data. As there is only one product in one size at this point, the size can't be changed. However, when a different color is selected, the name of the product gets updated as well. 
+
+As the user is filling out the Shipping Details, the Order Summary is updated. The Address 2 field is optional and can be ignored. The country field is pre-set to United States, however, if changed, the country that is selected is displayed in the Order Summary as well.

@@ -83,7 +83,7 @@ const cityField = document.querySelector('#city');
 const stateField = document.querySelector('#state');
 const zipCodeField = document.querySelector('#zip-code');
 const countryField = document.querySelector('#country');
-const fieldArray = [nameField, emailField, addressField, address2Field, cityField, stateField,
+const fieldArray = [nameField, emailField, addressField, cityField, stateField,
                     zipCodeField];
 
 
@@ -107,12 +107,11 @@ function submitEvent(event) {
     let validateName = new CheckValidity(nameField, 'text');
     let validateEmail = new CheckValidity(emailField, 'email');
     let validateAddress = new CheckValidity(addressField, 'text');
-    let validateAddress2 = new CheckValidity(address2Field, 'text');
     let validateCity = new CheckValidity(cityField, 'text');
     let validateState = new CheckValidity(stateField, 'text');
     let validateZipCode = new CheckValidity(zipCodeField, 'text');
     
-    const validateArray = [validateName, validateEmail, validateAddress, validateAddress2,
+    const validateArray = [validateName, validateEmail, validateAddress, 
                            validateCity, validateState, validateZipCode];
     let counter = 0;
     
