@@ -167,6 +167,7 @@ stateField.addEventListener('keyup', typeAddress, false);
 zipCodeField.addEventListener('keyup', typeAddress, false);
 
 // Only show country if user changes the selected option
+const country = document.querySelector("#js-country");
 countryField.addEventListener('change', function() { country.textContent = countryField.value; });
 
 
